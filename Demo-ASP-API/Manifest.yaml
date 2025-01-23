@@ -1,0 +1,6 @@
+---
+applications:
+- name: demo-dotnet-core
+  path: C:\Users\Sylva\source\repos\Demo-ASP-API\Demo-ASP-API
+  stack: windows
+  command: cmd /c C:\Users\Sylva\source\repos\Demo-ASP-API --urls=http://0.0.0.0:%PORT%
