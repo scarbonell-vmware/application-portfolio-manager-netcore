@@ -12,7 +12,7 @@
     using System.Threading.Tasks;
 
 
-    [Route("[controller]")]
+    [Route("/api/v1/application")]
     [ApiController]
     public class ApplicationController : ControllerBase
     {

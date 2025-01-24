@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Demo_ASP_API.Controllers
 {
 
-    [Route("[controller]")]
+    [Route("/api")]
     [ApiController]
     public class ContextController : ControllerBase
     {
@@ -34,6 +34,20 @@ namespace Demo_ASP_API.Controllers
             return  sortedEntries;
         }
 
+        [HttpGet("version")]
+        [Produces("application/json")]
+        public async Task<Dictionary<string, string>> GetVersion()
+        {
+
+            var map = new Dictionary<string, string>
+            {
+                { "name", "1.0.0" }
+            };
+
+            return map;
+        }
 
     }
-}
+
+    
+    }
