@@ -12,6 +12,7 @@
     using System.Threading.Tasks;
 
 
+
     [Route("/api/v1/application")]
     [ApiController]
     public class ApplicationController : ControllerBase
@@ -21,6 +22,28 @@
         public ApplicationController(AppDbContext context)
         {
             _context = context;
+        }
+
+        [HttpPost ("seed")]
+        public async Task<IActionResult> CreateSeeds()
+        {
+            List<Models.Application> apps = await _context.Applications.ToListAsync();
+            if (apps != null && apps.Count == 0)
+            {
+                Application defaultApp = new Application();
+                defaultApp.setName("Finance 2.0");
+                defaultApp.setDescription("Manage Stock Trades");
+                defaultApp.setBusinessEntity("CDE");
+                defaultApp.setOrganization("FIN");
+                defaultApp.setBusinessOwner("Martin Bacle");
+                defaultApp.setIdentifier("Fin2-0");
+
+                 
+                 _context.Applications.Add(defaultApp);
+                await _context.SaveChangesAsync();
+                //apps = await _context.Applications.ToListAsync();
+            }
+            return NoContent();
         }
 
         [HttpGet]

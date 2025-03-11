@@ -19,12 +19,16 @@
     </PackageReference>
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.3" />
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL.Design" Version="1.1.0" />
+    <PackageReference Include="Steeltoe.Connector.ConnectorCore" Version="3.2.8" />
+    <PackageReference Include="Steeltoe.Extensions.Configuration.CloudFoundryCore" Version="3.2.8" />
     <PackageReference Include="Steeltoe.Management.EndpointCore" Version="3.2.8" />
     <PackageReference Include="Steeltoe.Management.TracingCore" Version="3.2.8" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+    <PackageReference Include="System.Text.Json" Version="9.0.2" />
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="bin\Debug\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 
